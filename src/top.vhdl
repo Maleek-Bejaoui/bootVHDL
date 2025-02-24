@@ -6,7 +6,7 @@ entity tt_um_top is
     port (
         ui_in1   : in  std_logic_vector(7 downto 0);
         ui_in2   : in  std_logic_vector(7 downto 0);
-        ui_in3   : in  std_logic_vector(7 downto 0);
+        ui_in   : in  std_logic_vector(7 downto 0);
         
         uo_out1  : out std_logic_vector(7 downto 0);
         uo_out2  : out std_logic_vector(7 downto 0);
@@ -55,7 +55,7 @@ begin
         rx => ui_in1(0),
         scan_memory => ui_in1(1),
         ram_out(7 downto 0) => ui_in2, 
-        ram_out(15 downto 8) => ui_in3,
+        ram_out(15 downto 8) => ui_in,
                    
         ram_rw => uo_out1(0),
         ram_enable => uo_out1(1),
