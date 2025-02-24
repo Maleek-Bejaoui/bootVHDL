@@ -34,7 +34,7 @@ pinout:
   ui[1]: "rst_n"
   ui[2]: "ui_in1"
   ui[3]: "ui_in2"
-  ui[4]: "ui_in3"
+  ui[4]: "ui_in"
   ui[5]: "ena"
   ui[6]: ""
   ui[7]: ""
