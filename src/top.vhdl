@@ -8,10 +8,12 @@ entity tt_um_top is
         ui_in2   : in  std_logic_vector(7 downto 0);
         ui_in3   : in  std_logic_vector(7 downto 0);
         
-        uo_out  : out std_logic_vector(7 downto 0);
-        uio_in  : in  std_logic_vector(7 downto 0);
-        uio_out : out std_logic_vector(7 downto 0);
-        uio_oe  : out std_logic_vector(7 downto 0);
+        uo_out1  : out std_logic_vector(7 downto 0);
+        uo_out2  : out std_logic_vector(7 downto 0);
+        uo_out3  : out std_logic_vector(7 downto 0);
+        uo_out4  : out std_logic_vector(7 downto 0);
+
+
         ena     : in  std_logic;
         clk     : in  std_logic;
         rst_n   : in  std_logic
