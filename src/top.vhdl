@@ -53,7 +53,7 @@ begin
         clk => clk,
         ce => ena,
         rx => ui_in1(0),
-        scan_memory => ui_in1(1);
+        scan_memory => ui_in1(1),
         ram_out(7 downto 0) => ui_in2, 
         ram_out(15 downto 8) => ui_in3,
                    
