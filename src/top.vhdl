@@ -4,7 +4,10 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity tt_um_top is
     port (
-        ui_in   : in  std_logic_vector(7 downto 0);
+        ui_in1   : in  std_logic_vector(7 downto 0);
+        ui_in2   : in  std_logic_vector(7 downto 0);
+        ui_in3   : in  std_logic_vector(7 downto 0);
+        
         uo_out  : out std_logic_vector(7 downto 0);
         uio_in  : in  std_logic_vector(7 downto 0);
         uio_out : out std_logic_vector(7 downto 0);
@@ -15,11 +18,22 @@ entity tt_um_top is
     );
 end tt_um_top;
 
+
+    
 architecture Behavioral of tt_um_top is
 
- component compteur port ( clk : in STD_LOGIC;
-           rst : in STD_LOGIC;
-           cmpt : out STD_LOGIC_VECTOR (7 downto 0));
+ component boot_loader port (  rst : IN STD_LOGIC;
+        clk : IN STD_LOGIC;
+        ce : IN STD_LOGIC;
+        rx : IN STD_LOGIC;
+        tx : OUT STD_LOGIC;
+        boot : OUT STD_LOGIC;
+        scan_memory : IN STD_LOGIC;
+        ram_out : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+        ram_rw : OUT STD_LOGIC;
+        ram_enable : OUT STD_LOGIC;
+        ram_adr : OUT STD_LOGIC_VECTOR(RAM_ADR_WIDTH - 1 DOWNTO 0);
+        ram_in : OUT STD_LOGIC_VECTOR(15 DOWNTO 0));
  end component ;
 
 begin
