@@ -24,7 +24,11 @@ end tt_um_top;
     
 architecture Behavioral of tt_um_top is
 
- component boot_loader port (  rst : IN STD_LOGIC;
+ component boot_loader 
+    GENERIC (
+            RAM_ADR_WIDTH : INTEGER := 6;
+            RAM_SIZE : INTEGER := 64);
+    port (  rst : IN STD_LOGIC;
         clk : IN STD_LOGIC;
         ce : IN STD_LOGIC;
         rx : IN STD_LOGIC;
@@ -44,11 +48,24 @@ begin
     uio_out <= "00000000";
     uio_oe <= "00000000";
     
-     U1 : compteur  port map (
-                            clk => clk,
-                            rst => not(rst_n),
-                            cmpt =>   uo_out
-                        );
+     U1 : boot_loader  
+         generic map( RAM_ADR_WIDTH => 6;
+            RAM_SIZE => 64);
+         port map (rst => not(rst_n),
+        clk => clk,
+        ce => ena,
+        rx => ui_in1(0),
+        
+       
+        scan_memory => ui_in1(1);
+        ram_out(7 downto 0) => ui_in2, 
+        ram_out(15 downto 8) => ui_in3,
+        ram_rw : OUT STD_LOGIC;
+        ram_enable : OUT STD_LOGIC;
+        ram_adr : OUT STD_LOGIC_VECTOR(RAM_ADR_WIDTH - 1 DOWNTO 0);
+        ram_in : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
+                   tx : OUT STD_LOGIC; 
+                   boot : OUT STD_LOGIC; );
 
 
 end Behavioral;
