@@ -1,11 +1,11 @@
 # Tiny Tapeout project information
 project:
-  title:        "ASIC"      # Project title
-  author:       "ASIC"      # Your name
-  discord:      "ASIC"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  "ASIC"      # One line description of what your project does
+  title:        "boot"      # Project title
+  author:       "malekkkkkkkkkk"      # Your name
+  discord:      "bootboot"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "a_boot"      # One line description of what your project does
   language:     "VHDL"  # other examples include Verilog, SystemVerilog, Amaranth, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     1000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
@@ -21,25 +21,29 @@ project:
   #          the shuttle and VHDL support may be dropped for future shuttles if we see low usage.
   source_files:
     - "top.vhdl"
-    - "compteur.vhdl"
+    - "UART_fifoed_send_V1.vhd"
+    - "boot_loader.vhd"
+    - "byte_2_word.vhd"
+    - "uart_recv.vhd"
+    - "word_2_byte.vhd"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
   ui[0]: "clk"
   ui[1]: "rst_n"
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
+  ui[2]: "ui_in1"
+  ui[3]: "ui_in2"
+  ui[4]: "ui_in3"
+  ui[5]: "ena"
   ui[6]: ""
   ui[7]: ""
 
   # Outputs
-  uo[0]: "uo_out"
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
+  uo[0]: "uo_out1"
+  uo[1]: "uo_out2"
+  uo[2]: "uo_out3"
+  uo[3]: "uo_out4"
   uo[4]: ""
   uo[5]: ""
   uo[6]: ""
