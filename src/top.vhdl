@@ -44,10 +44,8 @@ architecture Behavioral of tt_um_top is
 
 begin
 
-   -- uo_out <= std_logic_vector(unsigned(ui_in) + unsigned(uio_in));
-    uio_out <= "00000000";
-    uio_oe <= "00000000";
-    
+    uo_out1(7 downto 4) <= "0000";
+    uo_out2(7 downto 6) <= "00";
      U1 : boot_loader  
          generic map( RAM_ADR_WIDTH => 6;
             RAM_SIZE => 64);
@@ -55,17 +53,17 @@ begin
         clk => clk,
         ce => ena,
         rx => ui_in1(0),
-        
-       
         scan_memory => ui_in1(1);
         ram_out(7 downto 0) => ui_in2, 
         ram_out(15 downto 8) => ui_in3,
-        ram_rw : OUT STD_LOGIC;
-        ram_enable : OUT STD_LOGIC;
-        ram_adr : OUT STD_LOGIC_VECTOR(RAM_ADR_WIDTH - 1 DOWNTO 0);
-        ram_in : OUT STD_LOGIC_VECTOR(15 DOWNTO 0);
-                   tx : OUT STD_LOGIC; 
-                   boot : OUT STD_LOGIC; );
+                   
+        ram_rw => uo_out1(0),
+        ram_enable => uo_out1(1),
+        ram_adr => uo_out2(5 downto 0),
+        ram_in(7 downto 0) => uo_out3,
+        ram_in(15 downto 8) => uo_out4,
+        tx => uo_out1(2),
+        boot => uo_out1(3));
 
 
 end Behavioral;
