@@ -47,8 +47,8 @@ begin
     uo_out1(7 downto 4) <= "0000";
     uo_out2(7 downto 6) <= "00";
      U1 : boot_loader  
-         generic map( RAM_ADR_WIDTH => 6;
-            RAM_SIZE => 64);
+         generic map( RAM_ADR_WIDTH => 6,
+            RAM_SIZE => 64)
          port map (rst => not(rst_n),
         clk => clk,
         ce => ena,
