@@ -51,7 +51,7 @@ architecture Behavioral of tt_um_top is
 
 begin
 
-    uo_out(7 downto 1) <= "000000";
+    uo_out(7 downto 1) <= "0000000";
      U1 : boot_loader  
          generic map( RAM_ADR_WIDTH => 6,
             RAM_SIZE => 64)
