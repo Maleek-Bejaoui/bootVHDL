@@ -1,7 +1,7 @@
 # Tiny Tapeout project information
 project:
   title:        "boot"      # Project title
-  author:       "malekkkkkkkkkk"      # Your name
+  author:       "malekkkkkkkkk"      # Your name
   discord:      "bootboot"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
   description:  "a_boot"      # One line description of what your project does
   language:     "VHDL"  # other examples include Verilog, SystemVerilog, Amaranth, etc
