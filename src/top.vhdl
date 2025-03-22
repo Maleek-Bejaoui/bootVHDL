@@ -42,8 +42,11 @@ architecture Behavioral of tt_um_top is
         ram_in : OUT STD_LOGIC_VECTOR(15 DOWNTO 0));
  end component ;
 
-        SIGNAL s_uio_out1,s_uio_out5 : STD_LOGIC_VECTOR(7 DOWNTO 0) ;
-        SIGNAL s_uio_out2,s_uio_out3, s_uio_out4,s_uio_out6 : STD_LOGIC;
+        SIGNAL s_uio_out1,s_uio_out5 : STD_LOGIC_VECTOR(15 DOWNTO 0) ;
+        SIGNAL s_uio_out2,s_uio_out3 , s_uio_out6 : STD_LOGIC;
+        SIGNAL s_uio_out4: STD_LOGIC_VECTOR(7 DOWNTO 0);
+
+
 
 
 begin
@@ -59,11 +62,11 @@ begin
         rx => ui_in(0),
         scan_memory => ui_in(1),
                    
-        ram_out(15 downto 0) => s_uio_out1,     
+        ram_out => s_uio_out1,     
         ram_rw => s_uio_out2,
         ram_enable => s_uio_out3,
         ram_adr => s_uio_out4,
-        ram_in(15 downto 0) => s_uio_out5,
+        ram_in => s_uio_out5,
         tx => uo_out(0),
         boot => s_uio_out6);
 
