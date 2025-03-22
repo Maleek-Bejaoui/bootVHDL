@@ -44,7 +44,7 @@ architecture Behavioral of tt_um_top is
 
         SIGNAL s_uio_out1,s_uio_out5 : STD_LOGIC_VECTOR(15 DOWNTO 0) ;
         SIGNAL s_uio_out2,s_uio_out3 , s_uio_out6 : STD_LOGIC;
-        SIGNAL s_uio_out4: STD_LOGIC_VECTOR(7 DOWNTO 0);
+        SIGNAL s_uio_out4: STD_LOGIC_VECTOR(6 DOWNTO 0);
 
 
 
