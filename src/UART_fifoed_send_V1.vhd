@@ -1,17 +1,4 @@
-----------------------------------------------------------------------------------
---
--- UART_fifoed_send_V1
--- Version 1.1
--- 
--- V1.1 : Written by Yannick Bornat (2016/04/20)
---       - build from UART_send v1.1, named to fit the same version number
---
--- Sends chars on the UART line, has a built-in fifo to accept char inputs while
--- sending an older char
--- during character send, busy output bit is set to '1' and the module ignores inputs.
--- works at 100MHz with 115.200kbps transfer rate
---
-----------------------------------------------------------------------------------
+
 LIBRARY IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
