@@ -124,9 +124,7 @@ BEGIN
         fifo_empty => OPEN,
         fifo_afull => OPEN,
         fifo_full => OPEN);
-    ---------------------
-    -- rx_byte_register
-    ---------------------
+ 
 
     b2w : byte_2_word
     PORT MAP(
@@ -137,9 +135,7 @@ BEGIN
         byte => rx_byte,
         word_dv => rx_word_valid,
         word => rx_word);
-    ---------------------
-    -- rx_byte_counter
-    ---------------------
+  
 
     PROCESS (rst, clk)
     BEGIN
@@ -170,9 +166,7 @@ BEGIN
         byte_dv => tx_word_valid,
         byte => tx_byte);
 
-    ---------------------
-    -- tx_cycle_counter
-    ---------------------
+ 
 
     PROCESS (rst, clk)
     BEGIN
@@ -194,9 +188,7 @@ BEGIN
         END IF;
     END PROCESS;
 
-    ---------------------
-    -- fsm
-    ---------------------
+
 
     state_register : PROCESS (rst, clk)
     BEGIN
